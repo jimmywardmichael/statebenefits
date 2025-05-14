@@ -6,24 +6,27 @@
 </head>
 <body>
 <h1>Claimant Registration Form</h1>
-<form action="/api/claimants" method="POST">
+<form action="/api/claimants" method="post">
     <label for="fullName">Full Name:</label>
-    <input type="text" id="fullName" name="fullName" required><br><br>
+    <input type="text" name="fullName" id="fullName"><br>
 
     <label for="ssn">SSN:</label>
-    <input type="text" id="ssn" name="ssn" required><br><br>
+    <input type="text" name="ssn" id="ssn"><br>
 
     <label for="income">Income:</label>
-    <input type="number" id="income" name="income" required><br><br>
+    <input type="number" name="income" id="income" step="0.01"><br>
 
     <label for="dependents">Dependents:</label>
-    <input type="number" id="dependents" name="dependents" required><br><br>
+    <input type="number" name="dependents" id="dependents"><br>
 
+    <!-- Ensure eligible is always sent (default false) -->
+    <input type="hidden" name="eligible" value="false">
     <label for="eligible">Eligible:</label>
-    <input type="checkbox" id="eligible" name="eligible"><br><br>
+    <input type="checkbox" name="eligible" id="eligible" value="true"><br>
 
-    <input type="submit" value="Submit">
+    <button type="submit">Submit</button>
 </form>
+
 
 </body>
 </html>
